@@ -32,8 +32,8 @@ import (
 
 	"github.com/edwarnicke/grpcfd"
 
-	"github.com/networkservicemesh/sdk-k8s/pkg/registry/chains/registryk8s"
-	"github.com/networkservicemesh/sdk-k8s/pkg/tools/k8s"
+	"github.com/bszirtes/sdk-k8s/pkg/registry/chains/registryk8s"
+	"github.com/bszirtes/sdk-k8s/pkg/tools/k8s"
 	"github.com/networkservicemesh/sdk/pkg/registry/common/authorize"
 	"github.com/networkservicemesh/sdk/pkg/tools/opentelemetry"
 	"github.com/networkservicemesh/sdk/pkg/tools/spiffejwt"
@@ -77,7 +77,7 @@ type Config struct {
 }
 
 func main() {
-	var config = new(Config)
+	config := new(Config)
 	// Setup context to catch signals
 	ctx, cancel := signal.NotifyContext(
 		context.Background(),
