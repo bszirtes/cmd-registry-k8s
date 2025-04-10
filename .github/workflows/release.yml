@@ -25,15 +25,24 @@ jobs:
 
   check-gomod-deps:
     needs: get-tag
-    uses: networkservicemesh/.github/.github/workflows/check-gomod-deps.yaml@main
-    with:
-      tag: ${{ needs.get-tag.outputs.tag }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v4
+        with:
+          ref: refs/heads/${{github.event.workflow_run.head_branch}}
+
+      - name: Check go.mod deps
+        run: |
+          cat go.mod |
+          grep -v 'github.com/bszirtes/sdk-k8s* ${{ needs.get-tag.outputs.tag }}' || exit 0;
+          exit 1;
 
   create-release:
     needs: [get-tag, check-gomod-deps]
     uses: networkservicemesh/.github/.github/workflows/release.yaml@main
     secrets:
-      token: ${{ secrets.NSM_BOT_GITHUB_TOKEN }}
+      token: ${{ secrets.BOT_TOKEN }}
 
   docker:
     needs: [get-tag, check-gomod-deps]
@@ -41,14 +50,33 @@ jobs:
     with:
       tag: ${{ needs.get-tag.outputs.tag }}
     secrets:
-      token: ${{ secrets.GITHUB_TOKEN }}
+      token: ${{ secrets.BOT_TOKEN }}
 
-  update-deployments-k8s:
+  push:
     name: Update deployments-k8s
     needs: [get-tag, create-release]
     if: ${{ github.repository != 'networkservicemesh/cmd-template' }}
-    uses: networkservicemesh/.github/.github/workflows/release-deployments.yaml@main
-    with:
-      tag: ${{ needs.get-tag.outputs.tag }}
-    secrets:
-      token: ${{ secrets.NSM_BOT_GITHUB_TOKEN }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout deployments-k8s
+        uses: actions/checkout@v4
+        with:
+          repository: bszirtes/deployments-k8s
+          token: ${{ secrets.BOT_TOKEN }}
+
+      - name: Push update to the deployments-k8s
+        # This option makes script continue execution even if some commands return non-zero exit code
+        shell: bash {0}
+        run: |
+          git config --global user.email "nsmbot@networkservicmesh.io"
+          git config --global user.name "NSMBot"
+
+          branch=release/${{ needs.get-tag.outputs.tag }}
+          git checkout -b $branch
+          git push origin $branch
+
+          if [ "$?" != 0 ]; then
+            gh workflow run check-tag.yaml -f branch=$branch --ref=$branch --repo bszirtes/deployments-k8s
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.BOT_TOKEN }}
