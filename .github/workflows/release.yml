@@ -50,7 +50,7 @@ jobs:
     with:
       tag: ${{ needs.get-tag.outputs.tag }}
     secrets:
-      token: ${{ secrets.BOT_TOKEN }}
+      token: ${{ secrets.GITHUB_TOKEN }}
 
   push:
     name: Update deployments-k8s
