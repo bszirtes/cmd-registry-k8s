@@ -35,8 +35,8 @@ jobs:
       - name: Check go.mod deps
         run: |
           cat go.mod |
-          grep -v 'github.com/bszirtes/sdk-k8s* ${{ needs.get-tag.outputs.tag }}' || exit 0;
-          exit 1;
+          grep 'github.com/bszirtes/sdk-k8s* ${{ needs.get-tag.outputs.tag }}' || exit 1;
+          exit 0;
 
   create-release:
     needs: [get-tag, check-gomod-deps]
