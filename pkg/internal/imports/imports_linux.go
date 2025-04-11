@@ -4,12 +4,6 @@ package imports
 import (
 	_ "context"
 	_ "crypto/tls"
-	_ "net/url"
-	_ "os"
-	_ "os/signal"
-	_ "syscall"
-	_ "time"
-
 	_ "github.com/antonfisher/nested-logrus-formatter"
 	_ "github.com/bszirtes/sdk-k8s/pkg/registry/chains/registryk8s"
 	_ "github.com/bszirtes/sdk-k8s/pkg/tools/k8s"
@@ -30,4 +24,9 @@ import (
 	_ "github.com/spiffe/go-spiffe/v2/workloadapi"
 	_ "google.golang.org/grpc"
 	_ "google.golang.org/grpc/credentials"
+	_ "net/url"
+	_ "os"
+	_ "os/signal"
+	_ "syscall"
+	_ "time"
 )

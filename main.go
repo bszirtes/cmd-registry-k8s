@@ -1,6 +1,6 @@
-// Copyright (c) 2020-2022 Doc.ai and/or its affiliates.
+// Copyright (c) 2020-2025 Doc.ai and/or its affiliates.
 //
-// Copyright (c) 2023-2024 Cisco and/or its affiliates.
+// Copyright (c) 2023-2025 Cisco and/or its affiliates.
 //
 // SPDX-License-Identifier: Apache-2.0
 //
@@ -34,6 +34,7 @@ import (
 
 	"github.com/bszirtes/sdk-k8s/pkg/registry/chains/registryk8s"
 	"github.com/bszirtes/sdk-k8s/pkg/tools/k8s"
+
 	"github.com/networkservicemesh/sdk/pkg/registry/common/authorize"
 	"github.com/networkservicemesh/sdk/pkg/tools/opentelemetry"
 	"github.com/networkservicemesh/sdk/pkg/tools/spiffejwt"
