@@ -21,6 +21,8 @@ github.com/benbjohnson/clock v1.3.0 h1:ip6w0uFQkncKQ979AypyG0ER7mqUSBdKLOgAle/AT
 github.com/benbjohnson/clock v1.3.0/go.mod h1:J11/hYXuz8f4ySSvYwY0FKfm+ezbsZBKZxNJlLklBHA=
 github.com/beorn7/perks v1.0.1 h1:VlbKKnNfV8bJzeqoa4cOKqO6bYr3WgKZxO8Z16+hsOM=
 github.com/beorn7/perks v1.0.1/go.mod h1:G2ZrVWU2WbWT9wwq4/hrbKbnv/1ERSJQ0ibhJ6rlkpw=
+github.com/bszirtes/sdk-k8s v0.1.26 h1:O546esaeZvxsYY46t7TU4hyFhk0DZtwbWpwYA2ibkoo=
+github.com/bszirtes/sdk-k8s v0.1.26/go.mod h1:WaN3RrA8Bu+osCLj0/pCV5XYdMWVHXxtHvS0SS2OF48=
 github.com/bytecodealliance/wasmtime-go v0.40.0 h1:7cGLQEctJf09JWBl3Ai0eMl1PTrXVAjkAb27+KHfIq0=
 github.com/bytecodealliance/wasmtime-go v0.40.0/go.mod h1:q320gUxqyI8yB+ZqRuaJOEnGkAnHh6WtJjMaT2CW4wI=
 github.com/cenkalti/backoff/v4 v4.2.1 h1:y4OZtCnogmCPw98Zjyt5a6+QwPLGkiQsYW5oUqylYbM=
@@ -163,12 +165,10 @@ github.com/modern-go/reflect2 v1.0.2 h1:xBagoLtFs94CBntxluKeaWgTMpvLxC4ur3nMaC9G
 github.com/modern-go/reflect2 v1.0.2/go.mod h1:yWuevngMOJpCy52FWWMvUC8ws7m/LJsjYzDa0/r8luk=
 github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 h1:C3w9PqII01/Oq1c1nUAm88MOHcQC9l5mIlSMApZMrHA=
 github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822/go.mod h1:+n7T8mK8HuQTcFwEeznm/DIxMOiR9yIdICNftLE1DvQ=
-github.com/networkservicemesh/api v1.14.2-rc.1.0.20241209080353-bbb4cd5f8f00 h1:xZGg3H5j9UoQW7GasoQrBtH4RkB9bgKdfuRIM9EUkCQ=
-github.com/networkservicemesh/api v1.14.2-rc.1.0.20241209080353-bbb4cd5f8f00/go.mod h1:GT0Yw1LYFSTxlDyJjBDhIxT82rJ2czZ0TiyzxSyKzvg=
-github.com/networkservicemesh/sdk v0.5.1-0.20250326135120-8ba46cbbc552 h1:z5DD41+GG6Ur/v2chZonlAYsSXBvepkPaE6I50Aji/k=
-github.com/networkservicemesh/sdk v0.5.1-0.20250326135120-8ba46cbbc552/go.mod h1:kG5axsqr5j7lRFfdx452AAUv7XVu9hig5p03y3fQST0=
-github.com/bszirtes/sdk-k8s v0.0.0-20250331122710-3ec08600d288 h1:lAVeWAZTzuAcFdwI/5lnW8DtvHol5FjrJaRS/bQtkoU=
-github.com/bszirtes/sdk-k8s v0.0.0-20250331122710-3ec08600d288/go.mod h1:Yiumr4dSE7HbxV7ncW7rbDQLvLL7VyyIPzhF/ENcCHY=
+github.com/networkservicemesh/api v1.14.5-0.20250331122810-c41e3fdcf9e1 h1:3vfHIeBTGa1syGrRKrbR4td8/6Kzwmb5j4fHbSbJtXM=
+github.com/networkservicemesh/api v1.14.5-0.20250331122810-c41e3fdcf9e1/go.mod h1:+wUn/OlUyKWLaVoZOsHbiGKe7MPk82CQLGvGyoWULp8=
+github.com/networkservicemesh/sdk v1.14.4 h1:jgx37VvmMYS0vpvJrPYqR20U/9ccnAOADLxbaKlz8rc=
+github.com/networkservicemesh/sdk v1.14.4/go.mod h1:2RfPKM1rOwEN0hCFW81GYKY0h4i11xpnf5Gi5GOwLG8=
 github.com/onsi/ginkgo/v2 v2.9.4 h1:xR7vG4IXt5RWx6FfIjyAtsoMAtnc3C/rFXBBd2AjZwE=
 github.com/onsi/ginkgo/v2 v2.9.4/go.mod h1:gCQYp2Q+kSoIj7ykSVb9nskRSsR6PUj4AiLywzIhbKM=
 github.com/onsi/gomega v1.27.6 h1:ENqfyGeS5AX/rlXDd/ETokDz93u0YufY1Pgxuy/PvWE=
